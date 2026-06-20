@@ -97,16 +97,6 @@
       overflow: hidden;
     }
 
-    #hero::before {
-      content: '';
-      position: absolute;
-      top: -80px; right: -80px;
-      width: 420px; height: 420px;
-      border-radius: 50%;
-      background: var(--orange);
-      opacity: 0.07;
-    }
-
     #hero::after {
       content: '';
       position: absolute;
@@ -114,7 +104,18 @@
       width: 280px; height: 280px;
       border-radius: 50%;
       background: var(--blue);
-      opacity: 0.08;
+      opacity: 0.06;
+    }
+
+    .hero-blume {
+      position: absolute;
+      top: 50%;
+      right: -80px;
+      transform: translateY(-50%);
+      width: clamp(320px, 45vw, 580px);
+      opacity: 0.13;
+      pointer-events: none;
+      mix-blend-mode: multiply;
     }
 
     #hero h1 {
@@ -623,9 +624,10 @@
     }
 
     .fotostreifen-track img {
-      height: 260px;
-      width: 360px;
+      height: 380px;
+      width: 260px;
       object-fit: cover;
+      object-position: center top;
       border-radius: 16px;
       flex-shrink: 0;
     }
@@ -659,6 +661,7 @@
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <img src="blume.png" alt="" class="hero-blume" />
   <h1>WHY NOT-i</h1>
   <p class="tagline">Ein Netzwerk für Frauen, die mehr vom Leben wollen – innerlich wie äußerlich.</p>
   <div>
