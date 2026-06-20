@@ -311,6 +311,15 @@
       opacity: 0.85;
     }
 
+    .gruenderin-foto {
+      width: 100%;
+      aspect-ratio: 3/4;
+      border-radius: 20px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
     .gruenderin-text h2 {
       font-size: clamp(1.6rem, 3vw, 2.2rem);
       color: var(--brown);
@@ -704,8 +713,9 @@
 <section id="gruenderin">
   <div class="container">
     <div class="gruenderin-inner">
-      <div class="gruenderin-img-placeholder">
-        Dein Foto hier
+      <img src="foto.jpg" alt="Viktoria – Gründerin WHY NOT-i" class="gruenderin-foto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+      <div class="gruenderin-img-placeholder" style="display:none;">
+        Foto wird geladen…
       </div>
       <div class="gruenderin-text">
         <p class="subtitle">Die Gründerin</p>
@@ -752,15 +762,15 @@
       <div class="m-card">
         <div class="m-icon">💬</div>
         <h3>Community-Raum</h3>
-        <p>WhatsApp-Community für Infos, Impulse &amp; Vernetzung – mit klaren Untergliederungen, damit der Raum für alle stimmig bleibt.</p>
+        <p>WhatsApp-Gruppe für Infos, Impulse &amp; Vernetzung – mit klarem Rahmen (z. B. „Werbemittwoch"), damit der Raum für alle stimmig bleibt.</p>
       </div>
     </div>
 
     <div class="price-box">
       <div class="price">€ 20</div>
-      <div class="price-sub">pro Monat · monatlich oder jährlich zahlbar · Mitgliedschaft jährlich</div>
+      <div class="price-sub">pro Monat · monatlich oder jährlich zahlbar</div>
       <a href="#kontakt" class="btn btn-white">Jetzt Mitglied werden</a>
-      <p class="note">Neugierig? Du kannst auch ohne Mitgliedschaft jederzeit als Gast zu den monatlichen Treffen kommen - für €20 pro Abend. Die Mitgliedsvorteile (Vernetzung in der Gruppe, Sichtbarkeit, Aufzeichnungen, Vergünstigungen) sind dann nicht enthalten. </p>
+      <p class="note">Du kannst auch ohne Mitgliedschaft jederzeit als Gast zu den monatlichen Treffen kommen – für € 20 pro Abend. Die Mitgliedsvorteile (Aufzeichnungen, vergünstigte Events, Community) sind dann nicht enthalten.</p>
     </div>
   </div>
 </section>
@@ -771,7 +781,7 @@
     <div class="section-heading">
       <h2>Events &amp; Termine</h2>
       <div class="accent-line"></div>
-      <p>Regelmäßige Treffen und besondere Momente – für echte Begegnungen und unvergessliche Erfahrungen. </p>
+      <p>Regelmäßige Treffen und besondere Momente – für echte Begegnungen und unvergessliche Erfahrungen.</p>
     </div>
 
     <div class="events-grid">
@@ -781,6 +791,14 @@
           <div class="event-date">Monatlich · Nächster Termin folgt</div>
           <p>Impulsvortrag + offenes Netzwerken – ca. 2 Stunden für Inspiration, Austausch und echte Verbindung. Gäste sind herzlich willkommen, um WHY NOT-i kennenzulernen.</p>
           <span class="event-tag">Mitglieder &amp; Gäste</span>
+          <div style="margin-top:1.25rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+            <a href="https://www.instagram.com/whynot.netzwerk" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem; padding:0.7rem 1.6rem;">
+              Zum nächsten Termin
+            </a>
+            <a href="#kontakt" class="btn btn-outline" style="font-size:0.85rem; padding:0.7rem 1.6rem;">
+              Jetzt Platz sichern
+            </a>
+          </div>
         </div>
       </div>
 
@@ -788,7 +806,7 @@
         <div class="event-banner">Root &amp; Rise Retreat</div>
         <div class="event-body">
           <div class="event-date">November 2025 · 4 Tage</div>
-          <p>Vier Tage nur für Frauen. Ein Retreat zum Ankommen, Genießen, Entspannen, Loslassen und Wachsen – intensiv, persönlich und unvergesslich. Mitglieder erhalten vergünstigte Tickets und können sich früher anmelden.</p>
+          <p>Vier Tage nur für Frauen. Ein Retreat zum Ankommen, Loslassen, Verwurzeln und Wachsen – intensiv, persönlich und unvergesslich. Mitglieder erhalten vergünstigte Tickets und können sich früher anmelden.</p>
           <span class="event-tag">Nur für Frauen</span>
           <div style="margin-top:1.25rem;">
             <a href="DEIN-GOOGLE-FORMULAR-LINK" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.85rem; padding:0.7rem 1.6rem;">
@@ -811,8 +829,8 @@
     </div>
 
     <div class="kontakt-links">
-      <a href="mailto:[whynotnetzwerk@gmail.com]">
-        ✉️ [whynotnetzwerk@gmail.com]
+      <a href="mailto:[DEINE-EMAIL]">
+        ✉️ [E-Mail einfügen]
       </a>
       <a href="https://www.instagram.com/whynot.netzwerk" target="_blank" rel="noopener">
         📷 @whynot.netzwerk
@@ -836,13 +854,36 @@
     <button class="modal-close" onclick="closeModal('impressum')">✕</button>
     <h2>Impressum</h2>
     <h3>Angaben gemäß § 5 ECG (Österreich)</h3>
-    <p><strong>[Viktoria Jammernegg]</strong></p>
-    <p>[Steinriegel 78]<br>[8442 Kitzeck im Sausal], Österreich</p>
+    <p><strong>Humanenergetik / Human Design</strong></p>
+    <p><strong>Inhaberin:</strong> Viktoria Jammernegg</p>
+    <p>Steinriegel 78<br>8442 Kitzeck<br>Österreich</p>
+    <p><strong>Tel:</strong> <a href="tel:+436646590561">+43 664 6590561</a><br>
+    <strong>E-Mail:</strong> <a href="mailto:info@friseurimweingarten.at">info@friseurimweingarten.at</a></p>
+    <p><strong>UID:</strong> ATU69238639</p>
 
-    <h3>Inhaltliche Verantwortung</h3>
+    <h3>Berufsbezeichnung und berufsrechtliche Regelungen</h3>
+    <p><strong>Berufszweig:</strong> Humanenergetiker<br>
+    <strong>Fachgruppe:</strong> Persönliche Dienstleister<br>
+    <strong>Verliehen in:</strong> Österreich</p>
+    <p><strong>Gewerbewortlaut:</strong> Hilfestellung zur Erreichung einer körperlichen bzw. energetischen Ausgewogenheit mittels der Methode von Dr. Bach, mittels Biofeedback oder Bioresonanz, mittels Auswahl von Farben, Düften, Lichtquellen, Aromastoffen, Edelsteinen, Musik, unter Anwendung kinesiologischer Methoden, mittels Interpretation der Aura, mittels Magnetfeldanwendung, durch sanfte Berührung des Körpers bzw. gezieltes Auflegen der Hände an bestimmten Körperstellen, mittels Cranio Sacral Balancing, durch Berücksichtigung bioenergetischer, geobiologischer, elektrobiologischer, baubiologischer und geomantischer Gesichtspunkte, durch Berücksichtigung der Auswirkungen der energetischen Geometrie und Lichtphysik, mittels Feng Shui, Zen, Vastu bzw. anderer lebensraumrelevanter Aspekte verschiedener Epochen und Kulturen, mittels Numerologie, mittels Wassersuche sowie radiästhetischen Untersuchungen mit Rute, Pendel etc., mittels Wahrnehmung raumenergetischer Phänomene mit und ohne Geräteunterstützung, durch Berücksichtigung von Planetenkonstellationen und lunaren Energien.</p>
+
+    <h3>Zuständige Kammer</h3>
+    <p>Wirtschaftskammer Steiermark, LB1: Sparten, Sparte Gewerbe und Handwerk<br>
+    Körblergasse 111–113, 8010 Graz, Österreich</p>
+
+    <h3>Behörde gem. ECG</h3>
+    <p>Bezirkshauptmannschaft Leibnitz</p>
+
+    <h3>Berufsrechtliche Regelungen</h3>
+    <p>Gewerbeordnung – einsehbar unter: <a href="https://www.ris.bka.gv.at" target="_blank" rel="noopener">www.ris.bka.gv.at</a></p>
+
+    <h3>Verbraucherstreitbeilegung</h3>
+    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h3>Haftung für Inhalte</h3>
     <p>Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehme ich keine Gewähr.</p>
 
-    <h3>Links</h3>
+    <h3>Haftung für Links</h3>
     <p>Diese Website enthält Links zu externen Websites Dritter. Für die Inhalte verlinkter Seiten übernehme ich keine Haftung, da eine ständige inhaltliche Kontrolle ohne konkrete Anhaltspunkte für eine Rechtsverletzung nicht zumutbar ist.</p>
   </div>
 </div>
@@ -855,7 +896,7 @@
     <p>Der Schutz deiner persönlichen Daten ist mir ein wichtiges Anliegen. Nachfolgend informiere ich dich gemäß der Datenschutz-Grundverordnung (DSGVO) und dem österreichischen Datenschutzgesetz (DSG) über die Verarbeitung deiner Daten.</p>
 
     <h3>Verantwortliche Person</h3>
-    <p>[Viktoria Jammernegg]<br>[Steinriegel 78, 8442 Kitzeck im Sausal]<br>
+    <p>Viktoria Jammernegg<br>Steinriegel 78, 8442 Kitzeck, Österreich<br><a href="mailto:info@friseurimweingarten.at">info@friseurimweingarten.at</a></p>
 
     <h3>Erhobene Daten</h3>
     <p>Auf dieser Website werden folgende Daten verarbeitet:</p>
@@ -874,7 +915,7 @@
     <p>Personenbezogene Daten werden nur so lange gespeichert, wie es für die jeweiligen Zwecke erforderlich ist oder gesetzliche Aufbewahrungsfristen bestehen.</p>
 
     <h3>Deine Rechte</h3>
-    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten sowie das Recht auf Datenübertragbarkeit. Bei Fragen wende dich an: [deine@email.at]</p>
+    <p>Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung deiner Daten sowie das Recht auf Datenübertragbarkeit. Bei Fragen wende dich an: <a href="mailto:info@friseurimweingarten.at">info@friseurimweingarten.at</a></p>
 
     <h3>Hosting</h3>
     <p>Diese Website wird über GitHub Pages (GitHub, Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) gehostet. Beim Aufruf dieser Website werden automatisch Verbindungsdaten (z. B. IP-Adresse) durch den Hosting-Anbieter erfasst. Weitere Infos: <a href="https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
