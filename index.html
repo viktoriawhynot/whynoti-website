@@ -643,6 +643,103 @@
 
       .gruenderin-img-placeholder { max-height: 200px; aspect-ratio: auto; }
     }
+
+    /* ── RETREAT POP-UP ── */
+    #popup-retreat {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(85,63,40,0.55);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    #popup-retreat.active { display: flex; }
+
+    .popup-box {
+      background: var(--white);
+      border-radius: 24px;
+      max-width: 520px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(85,63,40,0.25);
+      animation: popupIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+
+    @keyframes popupIn {
+      from { opacity: 0; transform: scale(0.88) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+
+    .popup-img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center 60%;
+      display: block;
+    }
+
+    .popup-body {
+      padding: 2rem 2rem 1.75rem;
+      text-align: center;
+    }
+
+    .popup-tag {
+      display: inline-block;
+      background: var(--cream);
+      color: var(--orange);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.85rem;
+      border-radius: 50px;
+      margin-bottom: 0.85rem;
+    }
+
+    .popup-body h2 {
+      font-size: 1.65rem;
+      color: var(--brown);
+      margin-bottom: 0.4rem;
+    }
+
+    .popup-body .popup-date {
+      font-size: 0.85rem;
+      color: var(--orange);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .popup-body p {
+      font-size: 0.9rem;
+      color: var(--brown);
+      opacity: 0.8;
+      margin-bottom: 1.5rem;
+      line-height: 1.65;
+    }
+
+    .popup-actions {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .popup-close-text {
+      display: block;
+      margin-top: 1.1rem;
+      font-size: 0.78rem;
+      color: var(--brown);
+      opacity: 0.45;
+      cursor: pointer;
+      text-decoration: underline;
+      transition: opacity 0.2s;
+    }
+
+    .popup-close-text:hover { opacity: 0.75; }
   </style>
 </head>
 <body>
@@ -864,7 +961,7 @@
         </div>
         <div class="event-banner">WHY NOT-i Retreat</div>
         <div class="event-body">
-          <div class="event-date">02.11. – 05.11.2026 · <a href="https://www.ratscher-landhaus.at" target="_blank" rel="noopener" style="color:var(--orange); text-decoration:none;">Ratscher Landhaus</a> | Süd-Steiermark</div>
+          <div class="event-date">02.11. – 05.11.2026 · <a href="https://www.ratscher-landhaus.at" target="_blank" rel="noopener" style="color:var(--orange); text-decoration:none;">Ratscher Landhaus</a> | Südsteiermark</div>
           <p>4 Tage nur für dich. Kein volles Programm – sondern eine bewusst gestaltete Auszeit mit inspirierenden Impulsen, achtsamen Ritualen und viel Raum für das, was du gerade brauchst. Wellness, Natur, Genuss und gemeinsame Abende mit echten Verbindungen. Inkl. liebevoll zusammengestelltem Verwöhnpaket mit regionalen Schätzen.</p>
           <p style="margin-top:0.75rem; font-size:0.88rem;"><strong>Programmbeitrag: € 244,–</strong> · Hotel separat buchbar (EZ ab € 175,– / DZ ab € 150,– p.P./Nacht inkl. Halbpension)</p>
           <span class="event-tag">Nur für Frauen</span>
@@ -910,6 +1007,26 @@
   </p>
   <p style="margin-top:0.75rem;">© 2026 WHY NOT-i · Alle Rechte vorbehalten</p>
 </footer>
+
+<!-- ── RETREAT POP-UP ── -->
+<div id="popup-retreat">
+  <div class="popup-box">
+    <div style="position:relative;">
+      <img src="retreat-mood.jpg" alt="WHY NOT-i Retreat – Ratscher Landhaus" class="popup-img" />
+    </div>
+    <div class="popup-body">
+      <span class="popup-tag">Nur für Frauen</span>
+      <h2>WHY NOT-i Retreat</h2>
+      <p class="popup-date">02.11. – 05.11.2026 · Ratscher Landhaus · Südsteiermark</p>
+      <p>4 Tage nur für dich. Wellness, Natur, Genuss und echte Verbindungen in der Südsteiermark.</p>
+      <div class="popup-actions">
+        <a href="https://forms.gle/65avff4wmADiSmpAA" target="_blank" rel="noopener" class="btn btn-primary" onclick="closePopup()">Jetzt anmelden</a>
+        <a href="#events" class="btn btn-outline" onclick="closePopup()">Mehr erfahren</a>
+      </div>
+      <span class="popup-close-text" onclick="closePopup()">Schließen</span>
+    </div>
+  </div>
+</div>
 
 <!-- ── MODAL: IMPRESSUM ── -->
 <div class="modal-overlay" id="modal-impressum">
@@ -992,6 +1109,21 @@
 </div>
 
 <script>
+  // Retreat Pop-up
+  function closePopup() {
+    document.getElementById('popup-retreat').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.getElementById('popup-retreat').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }, 1000);
+  });
+  document.getElementById('popup-retreat').addEventListener('click', function(e) {
+    if (e.target === this) closePopup();
+  });
+
   function openModal(type) {
     document.getElementById('modal-' + type).classList.add('active');
     document.body.style.overflow = 'hidden';
